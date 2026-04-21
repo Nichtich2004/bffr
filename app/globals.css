@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-text-primary antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-space-grotesk;
+  }
+
+  p, span, div {
+    @apply font-inter;
+  }
+
+  code, pre {
+    @apply font-jetbrains;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar for dark theme */
+  .scrollbar-dark::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-dark::-webkit-scrollbar-track {
+    background: theme('colors.dark-surface');
+  }
+
+  .scrollbar-dark::-webkit-scrollbar-thumb {
+    background: theme('colors.border-subtle');
+    border-radius: 4px;
+  }
+
+  .scrollbar-dark::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.text-muted');
+  }
+}
