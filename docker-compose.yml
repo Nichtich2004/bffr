@@ -1,0 +1,21 @@
+services:
+  bffr:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bffr-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - SHOPIFY_USE_MOCK=true
+      - SHOPIFY_STORE_DOMAIN=your-store.myshopify.com
+      - SHOPIFY_STOREFRONT_ACCESS_TOKEN=your-token
+    # Falls du ein Volume für den Cache nutzen willst (optional)
+    # volumes:
+    #   - ./.next:/app/.next
+
+networks:
+  default:
+    name: bffr_network
