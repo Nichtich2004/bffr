@@ -1,0 +1,15 @@
+scopes = "write_products,read_products,write_orders,read_orders,write_carts,read_carts"
+
+[build]
+dev = "npm run dev"
+build = "npm run build"
+
+[webhooks]
+api_version = "2024-01"
+
+[[webhooks.subscriptions]]
+topics = ["shop/update", "app/uninstalled"]
+uri = "https://example.com/webhooks"
+
+[app_extensions]
+path = "extensions"
