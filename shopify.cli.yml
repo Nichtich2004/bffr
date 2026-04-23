@@ -1,0 +1,9 @@
+development:
+  command: shopify dev
+  environment: development
+  log_level: debug
+
+deployment:
+  command: shopify deploy
+  environment: production
+  log_level: info
